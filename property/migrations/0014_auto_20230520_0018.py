@@ -11,7 +11,7 @@ def is_valid_number(pars_phone):
 def assign_values_for_owner_pure_phone(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
     flats = Flat.objects.all()
-    for flat in flats:
+    for flat in flats.iterator():
         phone = flat.owners_phonenumber
         pars_phone = phonenumbers.parse(phone, 'RU')
         if is_valid_number(pars_phone):

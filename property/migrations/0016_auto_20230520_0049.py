@@ -7,7 +7,7 @@ def fill_owner_model(apps, schema_editor):
     flat_model = apps.get_model('property', 'Flat')
     owner_model = apps.get_model('property', 'Owner')
     flats = flat_model.objects.all()
-    for flat in flats:
+    for flat in flats.iterator():
         flat_owner = flat.owner
         new_owner, created = owner_model.objects.get_or_create(
             owner=flat_owner,
