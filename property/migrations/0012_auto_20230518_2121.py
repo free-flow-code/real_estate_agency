@@ -17,8 +17,6 @@ def assign_values_for_owner_pure_phone(apps, schema_editor):
         if is_valid_number(pars_phone):
             flat.owner_pure_phone = phonenumbers.format_number(pars_phone, phonenumbers.PhoneNumberFormat.E164)
             flat.save()
-        else:
-            pass
 
 
 class Migration(migrations.Migration):
