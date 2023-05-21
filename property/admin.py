@@ -30,9 +30,9 @@ class ComplaintAdmin(admin.ModelAdmin):
 
 class OwnerAdmin(admin.ModelAdmin):
     list_display = (
-        'owner',
-        'owners_phonenumber',
-        'owner_pure_phone'
+        'name',
+        'phone',
+        'pure_phone'
     )
     raw_id_fields = ('flat',)
 
